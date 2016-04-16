@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom"
         android:title="메뉴 1"
         android:id="@+id/menu01" />
     <item
+        android:icon="@mipmap/ic_launcher"
+        app:showAsAction="ifRoom"
         android:title="메뉴 2"
         android:id="@+id/menu02" />
     <item
