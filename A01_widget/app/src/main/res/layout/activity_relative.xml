@@ -2,21 +2,52 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     >
 
     <TextView
-        android:id="@+id/text11"
-        android:text="안녕!!"
+        android:id="@+id/text01"
+        android:text="아이디 :"
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <TextView
-        android:layout_below="@id/text11"
+        android:layout_toRightOf="@id/text01"
         android:id="@+id/text02"
-        android:text="XXXX"
+        android:background="#ff0"
+        android:text=""
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@id/text01"
+        android:id="@+id/text03"
+        android:background="#fff"
+        android:text="암호 :"
         android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_below="@id/text02"
+        android:layout_alignLeft="@id/text02"
+        android:id="@+id/text04"
+        android:background="#ff0"
+        android:text="xxxx"
+        android:textSize="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:layout_below="@id/text03"
+        android:layout_centerHorizontal="true"
+        android:background="#fff"
+        android:textSize="30dp"
+        android:id="@+id/test05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="로그인" />
 
 </RelativeLayout>
