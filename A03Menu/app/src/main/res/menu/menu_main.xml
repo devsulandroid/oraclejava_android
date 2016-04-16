@@ -3,4 +3,13 @@
     <item
         android:title="메뉴 1"
         android:id="@+id/menu01" />
+    <item
+        android:title="메뉴 2"
+        android:id="@+id/menu02" />
+    <item
+        android:title="메뉴 3"
+        android:id="@+id/menu03" />
+    <item
+        android:title="메뉴 4"
+        android:id="@+id/menu04" />
 </menu>

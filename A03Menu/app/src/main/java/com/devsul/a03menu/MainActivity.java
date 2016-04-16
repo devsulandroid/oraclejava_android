@@ -27,9 +27,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         //return super.onOptionsItemSelected(item);
-        if(item.getItemId() == R.id.menu01){
-            Toast.makeText(this, "SELECTED", Toast.LENGTH_LONG).show();
-        }
+
+        //if(item.getItemId() == R.id.menu01){
+            Toast.makeText(this, "SELECTED : "+item.getTitle(), Toast.LENGTH_LONG).show();
+        //}
 
         return true;
     }
