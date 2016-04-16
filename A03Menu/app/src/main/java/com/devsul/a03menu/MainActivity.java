@@ -6,6 +6,7 @@ import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -14,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Context View 추가
+        TextView textView = (TextView)findViewById(R.id.testView);
+        registerForContextMenu(textView);
     }
 
     // 옵션 메뉴 만들기 (옵션 메뉴가 생성 될때)
