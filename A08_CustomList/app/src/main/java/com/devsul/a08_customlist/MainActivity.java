@@ -84,15 +84,15 @@ public class MainActivity extends AppCompatActivity {
             switch(i%4){
                 case 0: icon = android.R.drawable.ic_dialog_email;
                     break;
-                case 1: icon = android.R.drawable.ic_lock_idle_alarm;
+                case 1: icon = android.R.drawable.ic_menu_myplaces;
                     break;
                 case 2: icon = android.R.drawable.ic_btn_speak_now;
                     break;
-                case 3: icon = android.R.drawable.ic_lock_power_off;
+                case 3: icon = android.R.drawable.ic_menu_save;
                     break;
             }
 
-            MyData data = new MyData("data"+i, "desc"+i , icon);
+            MyData data = new MyData("Title : "+i, "Desc : "+i , icon);
             list.add(data);
         }
 
