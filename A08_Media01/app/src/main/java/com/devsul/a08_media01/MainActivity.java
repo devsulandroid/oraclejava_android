@@ -31,10 +31,12 @@ public class MainActivity extends AppCompatActivity {
                 mp = new MediaPlayer();
                 try {
                     mp.setDataSource(path);
+                    //버퍼링 해서 준비해주는 부분
                     mp.prepare();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
+                mp.start();
             }
         });
 
@@ -42,7 +44,12 @@ public class MainActivity extends AppCompatActivity {
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(mp != null){
+                    mp.stop();
+                    // 내부, 메모리 있는 데이터 삭제
+                    mp.release();
+                    mp = null;
+                }
             }
         });
     }
