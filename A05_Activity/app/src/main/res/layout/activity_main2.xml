@@ -10,4 +10,10 @@
     tools:context="com.devsul.a05_activity.Main2Activity"
     android:background="#f00">
 
+    <Button
+        android:id="@+id/btn02"
+        android:text="OK"
+        android:textSize="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 </RelativeLayout>
