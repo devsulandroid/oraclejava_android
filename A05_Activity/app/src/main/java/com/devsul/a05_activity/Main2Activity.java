@@ -36,12 +36,13 @@ public class Main2Activity extends AppCompatActivity {
         });
     }
 
+    //back key 눌렀을때
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
-
+    public void onBackPressed() {
         Intent intent01 = new Intent();
         intent01.putExtra("myResult","Main 2 Result");
         setResult(RESULT_OK, intent01);
+
+        super.onBackPressed();
     }
 }
