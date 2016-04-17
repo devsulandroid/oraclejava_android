@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.devsul.a08_media01">
 
+    <!-- 권한 설정 시작 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 권한 설정 끝 -->
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
