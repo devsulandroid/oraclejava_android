@@ -49,6 +49,7 @@
     </RadioGroup>
 
     <EditText
+        android:inputType="number"
         android:id="@+id/editText01"
         android:hint="아이디를 넣어주세요"
         android:layout_below="@id/radioGroup01"
