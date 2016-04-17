@@ -25,10 +25,11 @@ public class MainActivity extends AppCompatActivity {
         btnPLay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String path = Environment.getExternalStorageDirectory()+"/Download/TWICE.mp3";
+                String path = Environment.getExternalStorageDirectory()+"/Download/gag.mp4";
 
                 //미디어 플레이어 준비
                 mp = new MediaPlayer();
+
                 try {
                     mp.setDataSource(path);
                     //버퍼링 해서 준비해주는 부분
