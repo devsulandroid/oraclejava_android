@@ -19,6 +19,7 @@
         android:layout_height="32dp" />
 
     <TextView
+        android:id="@+id/listDesc"
         android:layout_alignLeft="@id/listTitle"
         android:layout_below="@id/listTitle"
         android:textSize="20dp"

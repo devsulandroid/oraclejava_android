@@ -6,7 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -52,6 +54,17 @@ public class MainActivity extends AppCompatActivity {
 
                 convertView = inf.inflate(R.layout.item_view, null);
             }
+
+            // 데이터 설정
+            // Activity 에서 있는 걸 사용 하지 않기 때문에 convertView 를 사용해야 한다
+            TextView testViewTitle = (TextView)convertView.findViewById(R.id.listTitle);
+            TextView testViewDesc = (TextView)convertView.findViewById(R.id.listDesc);
+            ImageView item_icon = (ImageView)convertView.findViewById(R.id.itemIcon);
+
+            MyData data = list.get(position);
+            testViewTitle.setText(data.title);
+            testViewDesc.setText(data.desc);
+            item_icon.setImageResource(data.icon);
 
             return convertView;
         }
