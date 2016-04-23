@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(Float... values) {
             super.onProgressUpdate(values);
+
+            textView.setText("CONT : " + values[0]);
         }
 
         //Thread에 해당
