@@ -2,6 +2,7 @@ package com.devsul.webview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -13,6 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         WebView webView = (WebView)findViewById(R.id.webView);
+
+        // 웹뷰 셋팅 얻어와서 자바스크립스 사용 가능하게 설정
+        WebSettings ws = webView.getSettings();
+        ws.setJavaScriptEnabled(true);;
 
         webView.setWebViewClient(new WebViewClient());
         webView.loadUrl("http://www.naver.com");
