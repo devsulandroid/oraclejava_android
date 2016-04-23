@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressDialog dlg;
     WebView webView;
 
-    // custom WebViewClient
+    // Custom WebViewClient 작성
     class MyWebViewClient extends WebViewClient{
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         dlg = new ProgressDialog(this) ;
         webView = (WebView)findViewById(R.id.webView);
 
