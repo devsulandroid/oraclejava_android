@@ -18,10 +18,10 @@ public class MainActivity extends AppCompatActivity {
         // TESTSQLiteOpenHelper helper = new TESTSQLiteOpenHelper(this, "people", null, 1);
 
         TESTSQLiteHandler dbHander = new TESTSQLiteHandler(this);
-        dbHander.insert("DEVSUL", 20, "서울");
+        dbHander.insert("DEVSUL1", 20, "서울");
         dbHander.insert("설의석", 30, "경기");
 
-        dbHander.update("DEVSUL", 30);
+        dbHander.update("DEVSUL", 40);
 
         String res = dbHander.selectAll();
 
