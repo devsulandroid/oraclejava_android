@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     // back key 이벤트
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         if(webView.canGoBack()){
             webView.goBack();
         }else{
