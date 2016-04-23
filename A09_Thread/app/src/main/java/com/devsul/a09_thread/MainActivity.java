@@ -14,6 +14,17 @@ public class MainActivity extends AppCompatActivity {
     private static final int Log_COUNT = 1;
     TextView textView;
 
+    class MyThread extends Thread{
+        @Override
+        public void run() {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
@@ -31,6 +42,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         textView = (TextView)findViewById(R.id.textView) ;
+
+        /**
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        };
+         **/
 
         // Thread
         Thread th = new Thread(new Runnable() {
@@ -61,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
         // Thread 실행
         th.start();
+
+//        MyThread th2 = (MyThread) new Thread();
+//        th2.start();
 
 
     }
