@@ -28,6 +28,34 @@ public class MyPullParser extends AsyncTask<String, Void, String> {
 
             xpp.setInput(new URL(params[0]).openStream() ,"utf-8");
 
+            // 한줄씩 읽어 내려간다 ( pullparser)
+            int eventType = xpp.getEventType();
+            boolean bRead = false;
+
+            while (eventType != XmlPullParser.END_DOCUMENT){
+                switch (eventType){
+                    case XmlPullParser.START_TAG:
+                        String tag = xpp.getName();
+                        if(tag.equals("hour") || tag.equals("day") || tag.equals("temp") || tag.equals("wfkor")){
+                            bRead = true;
+                        }
+                        break;
+                    case XmlPullParser.END_TAG:
+                        break;
+                    case XmlPullParser.TEXT:
+                        if(bRead){
+                            res += xpp.getText() + " ";
+                            bRead = false;
+                        }
+                        break;
+
+                }
+
+
+                eventType = xpp.next();
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }
