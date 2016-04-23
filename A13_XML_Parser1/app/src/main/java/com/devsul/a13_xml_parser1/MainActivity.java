@@ -10,8 +10,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         TextView textView = (TextView)findViewById(R.id.textView);
-        MyDomparser myDomparser = new MyDomparser(textView);
-        myDomparser.execute("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1174061000");
+
+        //Parser
+        //MyDomparser myDomparser = new MyDomparser(textView);
+        //myDomparser.execute("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1174061000");
+
+        //PullParser
+        MyPullParser myDomPullparser = new MyPullParser(textView);
+        myDomPullparser.execute("http://www.kma.go.kr/wid/queryDFSRSS.jsp?zone=1174061000");
 
     }
 }
