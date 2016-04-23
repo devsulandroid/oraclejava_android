@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
             super.handleMessage(msg);
 
             if(msg.what == Log_COUNT){
-                textView.setText(msg.arg1);
+                textView.setText("count : " + msg.arg1);
             }
         }
     };
