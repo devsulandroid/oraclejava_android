@@ -17,6 +17,6 @@ public class TESTSQLiteHandler {
 
     //insert
     public void insert(String name, int age, String address){
-
+        db = helper.getWritableDatabase();
     }
 }
