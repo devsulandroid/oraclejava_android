@@ -17,10 +17,19 @@ public class MainActivity extends AppCompatActivity {
     class MyThread extends Thread{
         @Override
         public void run() {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            for (int i=0; i<100; i++){
+                try {
+                    Thread.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                    throw new RuntimeException("에러");
+                }
+
+                //Handler 이용
+                Message msg = new Message();
+                msg.what = Log_COUNT;
+                msg.arg1 = i;
+                handler.sendMessage(msg);
             }
         }
     };
@@ -80,10 +89,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Thread 실행
-        th.start();
+        //th.start();
 
-//        MyThread th2 = (MyThread) new Thread();
-//        th2.start();
+        MyThread th2 = new MyThread();
+        th2.start();
 
 
     }
