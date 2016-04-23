@@ -4,11 +4,19 @@ import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    TextView textView;
+
     // Thread + Handler
     class MyTask extends AsyncTask<Integer, Float, String>{
+
+        @Override
+        protected void onProgressUpdate(Float... values) {
+            super.onProgressUpdate(values);
+        }
 
         //Thread에 해당
         @Override
@@ -23,8 +31,14 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 Log.d("async", "count:"+i);
+
+                // 직접 접근할 수 없다
+                //textView.setText("Cont : " + i );
+
+                publishProgress((float)i);
             }
             return null;
+
         }
     }
 
@@ -32,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        textView = (TextView)findViewById(R.id.textView);
 
         MyTask mytask = new MyTask();
         mytask.execute(100, 200, 300);
