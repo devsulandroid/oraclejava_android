@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap favicon) {
             super.onPageStarted(view, url, favicon);
-
             dlg.show();
         }
 
@@ -35,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        dlg = new ProgressDialog(this) ;
         webView = (WebView)findViewById(R.id.webView);
 
         // 웹뷰 셋팅 얻어와서 자바스크립스 사용 가능하게 설정
