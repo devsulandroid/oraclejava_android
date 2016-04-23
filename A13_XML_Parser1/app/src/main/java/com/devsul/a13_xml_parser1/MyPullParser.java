@@ -48,19 +48,13 @@ public class MyPullParser extends AsyncTask<String, Void, String> {
                             bRead = false;
                         }
                         break;
-
                 }
-
                 // 다음 줄로 이동
                 eventType = xpp.next();
             }
-
-
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
         return res;
     }
 
