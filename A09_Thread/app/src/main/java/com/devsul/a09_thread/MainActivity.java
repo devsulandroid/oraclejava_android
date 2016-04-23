@@ -12,11 +12,16 @@ import org.w3c.dom.Text;
 public class MainActivity extends AppCompatActivity {
 
     private static final int Log_COUNT = 1;
+    TextView textView;
 
     Handler handler = new Handler(){
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
+
+            if(msg.what == Log_COUNT){
+                textView.setText(msg.arg1);
+            }
         }
     };
 
@@ -25,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView textView = (TextView)findViewById(R.id.textView) ;
+        textView = (TextView)findViewById(R.id.textView) ;
 
         // Thread
         Thread th = new Thread(new Runnable() {
