@@ -10,13 +10,13 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
-
+    WebView webView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final WebView webView = (WebView)findViewById(R.id.webView);
+        webView = (WebView)findViewById(R.id.webView);
 
         // 웹뷰 셋팅 얻어와서 자바스크립스 사용 가능하게 설정
         WebSettings ws = webView.getSettings();
@@ -37,5 +37,15 @@ public class MainActivity extends AppCompatActivity {
                 webView.loadUrl(getUrl);
             }
         });
+    }
+
+    // back key 이벤트
+    @Override
+    public void onBackPressed(){
+        if(webView.canGoBack()){
+            webView.goBack();
+        }else{
+            finish();
+        }
     }
 }
