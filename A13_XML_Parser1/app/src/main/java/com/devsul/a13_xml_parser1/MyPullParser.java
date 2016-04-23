@@ -51,7 +51,7 @@ public class MyPullParser extends AsyncTask<String, Void, String> {
 
                 }
 
-
+                // 다음 줄로 이동
                 eventType = xpp.next();
             }
 
@@ -62,5 +62,11 @@ public class MyPullParser extends AsyncTask<String, Void, String> {
 
 
         return res;
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        super.onPostExecute(s);
+        textView.setText(s);
     }
 }
