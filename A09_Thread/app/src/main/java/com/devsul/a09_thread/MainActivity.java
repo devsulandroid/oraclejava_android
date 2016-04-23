@@ -2,6 +2,7 @@ package com.devsul.a09_thread;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +16,13 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 // Thread 동작
                 for (int i=0; i<100; i++){
-                    Thread.sleep(100);
+                    try {
+                        Thread.sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                        throw new RuntimeException("에러");
+                    }
+                    Log.d("thread","count : " + i);
                 }
             }
         });
