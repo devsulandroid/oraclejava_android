@@ -9,5 +9,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Thread th = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                // Thread 동작
+                for (int i=0; i<100; i++){
+                    Thread.sleep(100);
+                }
+            }
+        });
+        th.start();
+
+
     }
 }
