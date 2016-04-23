@@ -8,13 +8,13 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by c on 2016-04-23.
  * SQLiteOpenHelper 사용하기 위한 커스텀 SQLiteOpenHelper 생성
  */
-public class TESTSQLiteOpenHrlper extends SQLiteOpenHelper {
+public class TESTSQLiteOpenHelper extends SQLiteOpenHelper {
 
-    public TESTSQLiteOpenHrlper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
+    public TESTSQLiteOpenHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
     }
 
-    //디비가 처음 한번만 실행
+    //디비가 생성될때 한번만 실행
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE USER (id INTEGER PRIMARY KEY AUTOINCREMENT, " +
