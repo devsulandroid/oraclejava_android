@@ -43,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
 
             if(msg.what == Log_COUNT){
                 textView.setText("count : " + msg.arg1);
+                //progressBar 적용
+                pgBar.setProgress(msg.arg1);
             }
         }
     };
