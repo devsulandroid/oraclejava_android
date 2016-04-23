@@ -1,5 +1,6 @@
 package com.devsul.a12_sqlite;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
@@ -18,5 +19,12 @@ public class TESTSQLiteHandler {
     //insert
     public void insert(String name, int age, String address){
         db = helper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("name", name);
+        values.put("age", age);
+        values.put("address", address);
+
+        db.insert("USER", null, values);
     }
 }
