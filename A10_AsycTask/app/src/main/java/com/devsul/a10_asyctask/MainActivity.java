@@ -13,14 +13,7 @@ public class MainActivity extends AppCompatActivity {
     // Thread + Handler
     class MyTask extends AsyncTask<Integer, Float, String>{
 
-        @Override
-        protected void onProgressUpdate(Float... values) {
-            super.onProgressUpdate(values);
-
-            textView.setText("CONT : " + values[0]);
-        }
-
-        //Thread에 해당
+        //WORK Thread에 해당
         @Override
         protected String doInBackground(Integer... params) {
             int max = params[0];
@@ -39,7 +32,23 @@ public class MainActivity extends AppCompatActivity {
 
                 publishProgress((float)i);
             }
-            return null;
+            return "done";
+        }
+
+        // UI Thread에 해당
+        @Override
+        protected void onProgressUpdate(Float... values) {
+            super.onProgressUpdate(values);
+
+            textView.setText("CONT : " + values[0]);
+        }
+
+        //doInBackground return 값 받는 영역
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            textView.setText(s);
+
 
         }
     }
