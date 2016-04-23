@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+    ProgressDialog dlg;
+    WebView webView;
 
     // custom WebViewClient
     class MyWebViewClient extends WebViewClient{
@@ -25,14 +27,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-
             dlg.dismiss();
-
         }
     }
-
-    ProgressDialog dlg;
-    WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
