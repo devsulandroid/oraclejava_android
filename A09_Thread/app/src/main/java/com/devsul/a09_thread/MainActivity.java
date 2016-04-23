@@ -5,6 +5,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -13,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int Log_COUNT = 1;
     TextView textView;
+    ProgressBar pgBar;
 
     class MyThread extends Thread{
         @Override
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        pgBar = (ProgressBar)findViewById(R.id.pgBar) ;
         textView = (TextView)findViewById(R.id.textView) ;
 
         /**
