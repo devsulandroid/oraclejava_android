@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
             str += "provider : " + providers.get(i) + ", state : " + locationManager.isProviderEnabled(providers.get(i)) + "\n";
         }
 
-
-
-
         textView.setText(str);
 
         // 위치 정보 얻기
