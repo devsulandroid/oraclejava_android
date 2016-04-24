@@ -38,23 +38,17 @@
         <Button
             android:id="@+id/btn1"
             android:text="1"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1" />
+            style="@style/RemoteBtn" />
 
         <Button
             android:id="@+id/btn2"
             android:text="2"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1" />
+            style="@style/RemoteBtn" />
 
         <Button
             android:id="@+id/btn3"
             android:text="enter"
-            android:layout_height="match_parent"
-            android:layout_width="0dp"
-            android:layout_weight="1" />
+            style="@style/RemoteBtn" />
 
     </TableRow>
 
