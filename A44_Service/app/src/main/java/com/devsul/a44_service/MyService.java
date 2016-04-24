@@ -20,6 +20,7 @@ public class MyService extends Service {
         }
     }
 
+    //serviceConnection onServiceConnected 의 IBinder 로 넘어간다
     @Override
     public IBinder onBind(Intent intent) {
         // TODO: Return the communication channel to the service.
