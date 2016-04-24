@@ -33,23 +33,4 @@ public class MyService extends Service {
     public int getRandom(){
         return random.nextInt(100);
     }
-
-
-
-
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-    }
-
-    @Override
-    public int onStartCommand(Intent intent, int flags, int startId) {
-        return super.onStartCommand(intent, flags, startId);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-    }
 }
