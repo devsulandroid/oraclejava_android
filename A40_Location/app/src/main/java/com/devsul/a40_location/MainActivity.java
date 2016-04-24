@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
         TextView textView = (TextView)findViewById(R.id.textView);
-
+        // providers 네트웍정보를 제공하는것
         List <String> providers = locationManager.getAllProviders();
 
         //textView.setText(providers.toString());
