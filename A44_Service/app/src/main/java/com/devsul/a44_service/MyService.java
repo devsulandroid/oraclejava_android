@@ -12,6 +12,7 @@ public class MyService extends Service {
 
     public MyService() {
 
+
     }
 
     public class MyBinder extends Binder{
