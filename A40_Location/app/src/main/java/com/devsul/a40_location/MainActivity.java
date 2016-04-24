@@ -2,6 +2,8 @@ package com.devsul.a40_location;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -11,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final Geocoder geocoder = new Geocoder(this, Locale.KOREA);
+
         // 안드로이드 서비스를 사용할때 getSystemService 통해서 가져옴
         LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
@@ -31,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
             str += "provider : " + providers.get(i) + ", state : " + locationManager.isProviderEnabled(providers.get(i)) + "\n";
         }
 
+
+
+
         textView.setText(str);
 
         // 위치 정보 얻기
@@ -40,6 +49,18 @@ public class MainActivity extends AppCompatActivity {
             public void onLocationChanged(Location location) {
                 String str = "lat : " + location.getLatitude() + " lon : " + location.getLongitude()
                         + " alt : " + location.getAltitude() + "\n";
+                try {
+                    List<Address> list = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(), 1);
+
+                    //str += location.getLatitude()+"/"+location.getLongitude();
+                    Address address = list.get(0);
+                    str += "address size : " + list.size() + "\n";
+                    str += "address : " + address.toString()+ "\n";
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+
                 textView.append(str);
 
             }
