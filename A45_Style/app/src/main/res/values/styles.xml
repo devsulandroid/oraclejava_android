@@ -10,7 +10,7 @@
 
     <style name="RemoteBtn">
         <item name="android:background">@drawable/btn_selector</item>
-        <item name="android:textColor">#ff0</item>
+        <item name="android:textColor">@drawable/btn_text_color</item>
         <item name="android:layout_margin">4dp</item>
         <item name="android:textSize">20dp</item>
         <item name="android:layout_width">0dp</item>
