@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tblLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -20,10 +21,41 @@
 
     <TextView
         android:id="@+id/inTextView"
+        android:textColor="#fff"
+        android:background="#cd19d4"
         android:gravity="center"
         android:textSize="30dp"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp"
         android:text="0" />
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <Button
+            android:id="@+id/btn1"
+            android:text="1"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:text="2"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:text="enter"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1" />
+
+    </TableRow>
+
 </TableLayout>

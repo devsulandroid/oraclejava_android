@@ -25,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
                 Button btn = (Button)v;
                 String val = btn.getText().toString();
                 String inText = inTextView.getText().toString();
-                String outText = outTextView.getText().toString();
+
 
                 if(inText.equals("0")){
                     inTextView.setText(val);
                 }else{
-                    inTextView.setText(outText + val);
+                    inTextView.setText(inText + val);
                 }
             }
         };
@@ -39,5 +39,17 @@ public class MainActivity extends AppCompatActivity {
         Button btn2 = (Button) findViewById(R.id.btn2);
         btn1.setOnClickListener(numberListener);
         btn2.setOnClickListener(numberListener);
+
+        Button btn3 = (Button) findViewById(R.id.btn3);
+        btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String inTextVal = inTextView.getText().toString();
+                if(inTextVal.length() > 0){
+                    outTextView.setText(inTextVal);
+                    inTextView.setText("0");
+                }
+            }
+        });
     }
 }
