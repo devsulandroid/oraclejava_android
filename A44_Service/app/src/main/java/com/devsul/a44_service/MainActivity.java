@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         Intent intent = new Intent(this, MyService.class);
         //BIND_AUTO_CREATE bind가 생성되어있지않으면 CREATE해라
+        //bindService -> onBind 실행
         bindService(intent, serviceConnection, BIND_AUTO_CREATE);
     }
 
