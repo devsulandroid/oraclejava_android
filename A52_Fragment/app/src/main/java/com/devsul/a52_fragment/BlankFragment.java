@@ -28,8 +28,19 @@ public class BlankFragment extends Fragment {
         View view =  inflater.inflate(R.layout.fragment_blank, container, false);
 
 
-        TextView textViewCounter = (TextView) view.findViewById(R.id.textViewCounter);
+        final TextView textViewCounter = (TextView) view.findViewById(R.id.textViewCounter);
         Button btnIncrease = (Button)view.findViewById(R.id.btnIncrease);
+
+        btnIncrease.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //버튼클릭 이벤트
+                String str = textViewCounter.getText().toString();
+                int value = Integer.parseInt(str);
+                value++;
+                textViewCounter.setText(""+value);
+            }
+        });
 
         return view;
     }
