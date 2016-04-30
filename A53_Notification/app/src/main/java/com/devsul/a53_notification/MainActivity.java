@@ -36,12 +36,11 @@ public class MainActivity extends AppCompatActivity {
         builder.setSubText("SubTEXT");
         builder.setSmallIcon(R.mipmap.ic_launcher);
         builder.setLargeIcon(bitmap);
-        Notification notification = builder.build();
-
+        builder.setAutoCancel(true);
         //NotifiCation 에서 PendingIntent 에서 Intent를 꺼내서 사용한다.
         builder.setContentIntent(pendingIntent);
 
-
+        Notification notification = builder.build();
         notificationManager.notify(1234, notification);
     }
 }
