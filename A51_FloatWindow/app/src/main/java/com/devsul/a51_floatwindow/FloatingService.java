@@ -43,6 +43,7 @@ public class FloatingService extends Service {
 
 
         WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+                400,160,
                 WindowManager.LayoutParams.TYPE_PHONE,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
                 PixelFormat.TRANSLUCENT
@@ -52,6 +53,8 @@ public class FloatingService extends Service {
         params.y = 0;
 
         params.gravity = Gravity.CENTER | Gravity.CENTER;
+
+        wm.addView(ll, params);
 
 
 
