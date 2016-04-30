@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
                     fr = new BlankFragment();
                     FragmentTransaction ft = fm.beginTransaction();
                     ft.add(R.id.frame, fr, "counter");
+
+                    //액티비티 같이 관리 / 추가
+                    ft.addToBackStack(null);
+
                     ft.commit();
                 }
                 break;
@@ -33,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
                     FragmentTransaction ft = fm.beginTransaction();
                     ft.remove(fr);
                     ft.commit();
+
+                    //액티비티 같이 관리 / 제거
+                    fm.popBackStack();
                 }
                 break;
             case R.id.btnReplace:
@@ -45,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
                         BlankFragment fr1 = new BlankFragment();
                         ft.replace(R.id.frame, fr1, "counter");
                     }
+                    //액티비티 같이 관리 / 추가
+                    ft.addToBackStack(null);
 
                     ft.commit();
                 }
@@ -57,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
                     }else{
                         ft.hide(fr);
                     }
+                    //액티비티 같이 관리 / 추가
+                    ft.addToBackStack(null);
                     ft.commit();
                 }
                 break;
