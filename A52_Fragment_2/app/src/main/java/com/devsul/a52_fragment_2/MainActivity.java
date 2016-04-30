@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onBtnClick(View v){
         FragmentManager fm = getSupportFragmentManager();
-        Fragment fr = null;
+        Fragment fr = fm.findFragmentById(R.id.frame);
 
         switch (v.getId()){
             case R.id.btnAdd:
@@ -29,10 +29,36 @@ public class MainActivity extends AppCompatActivity {
                 }
                 break;
             case R.id.btnRemove:
+                if(fr != null){
+                    FragmentTransaction ft = fm.beginTransaction();
+                    ft.remove(fr);
+                    ft.commit();
+                }
                 break;
             case R.id.btnReplace:
+                if(fr != null){
+                    FragmentTransaction ft = fm.beginTransaction();
+                    if(fr.getTag().equals("counter")){
+                        BlankFragment2 fr2 = new BlankFragment2();
+                        ft.replace(R.id.frame, fr2, "text");
+                    }else{
+                        BlankFragment fr1 = new BlankFragment();
+                        ft.replace(R.id.frame, fr1, "counter");
+                    }
+
+                    ft.commit();
+                }
                 break;
             case R.id.btnHide:
+                if(fr != null){
+                    FragmentTransaction ft = fm.beginTransaction();
+                    if(fr.isHidden()){
+                        ft.show(fr);
+                    }else{
+                        ft.hide(fr);
+                    }
+                    ft.commit();
+                }
                 break;
         }
     }
