@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         //NotifiCation 에서 PendingIntent 에서 Intent를 꺼내서 사용한다.
         builder.setContentIntent(pendingIntent);
+
+
         notificationManager.notify(1234, notification);
     }
 }
