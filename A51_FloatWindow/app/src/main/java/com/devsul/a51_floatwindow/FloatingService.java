@@ -58,7 +58,9 @@ public class FloatingService extends Service {
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //화면 종료
                 wm.removeView(ll);
+                //서비스 종료
                 stopSelf();
             }
         });
