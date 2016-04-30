@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
 import android.view.Gravity;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
@@ -23,7 +24,7 @@ public class FloatingService extends Service {
     }
 
     WindowManager wm;
-
+    WindowManager.LayoutParams params;
     LinearLayout ll;
 
 
@@ -43,6 +44,30 @@ public class FloatingService extends Service {
 
         ll.setBackgroundColor(Color.argb(55,255,0,0));
         ll.setLayoutParams(llParams);
+        ll.setOnTouchListener(new View.OnTouchListener() {
+            WindowManager.LayoutParams updateParams = params;
+
+            int x,y;
+            float touchedX, touchedY;
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()){
+                    case MotionEvent.ACTION_DOWN:
+                        x = updateParams.x;
+                        y = updateParams.y;
+
+                        touchedX = event.getRawX();
+                        touchedY = event.getRawY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        updateParams.x = x + (int)(event.getRawX() - touchedX);
+                        updateParams.y = y + (int)(event.getRawY() - touchedY);
+                        wm.updateViewLayout(ll, updateParams);
+                        break;
+                }
+                return false;
+            }
+        });
 
         btnStop = new Button(this);
         ViewGroup.LayoutParams btnParams = new ViewGroup.LayoutParams(
@@ -65,7 +90,7 @@ public class FloatingService extends Service {
             }
         });
 
-        WindowManager.LayoutParams params = new WindowManager.LayoutParams(
+       params = new WindowManager.LayoutParams(
                 400,160,
                 WindowManager.LayoutParams.TYPE_PHONE,
                 WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
@@ -78,11 +103,5 @@ public class FloatingService extends Service {
         params.gravity = Gravity.CENTER | Gravity.CENTER;
 
         wm.addView(ll, params);
-
-
-
-
-
-
     }
 }
